@@ -77,7 +77,11 @@ FeetInches FeetInches::operator + (const FeetInches &right) {
 FeetInches FeetInches::operator - (const FeetInches &right) {
     FeetInches temp;
     temp.feet = feet - right.feet;
-    temp.inches = inches - right.inches;
+    if(inches-right.inches < 0){
+        temp.feet--;
+        temp.inches = 12 + (inches - right.inches);
+    }
+    else temp.inches = inches - right.inches;
     // when operands has opposite sign need to be fixed.
     temp.simplify();
     return temp;

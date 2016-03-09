@@ -29,10 +29,11 @@ class LandTract{
         //calculated area
         
         double getArea(){
+            
             double tempWidth = width;
             double tempLength = length;
-            
             double area = tempWidth * tempLength;
+            return area;
         }
 };
 #endif
